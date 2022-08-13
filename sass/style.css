@@ -1,0 +1,354 @@
+@import url("https://fonts.googleapis.com/css2?family=League+Spartan:wght@500;700&display=swap");
+:root {
+  --cyan-bg: hsl(180, 52%, 96%);
+  --white: white;
+  --cyan-tables: hsl(180, 31%, 95%);
+  --dark-cyan: hsl(180, 8%, 52%);
+  --dark-cyan-bg-main: hsl(180, 25%, 51%);
+  --very-dark-cyan:hsl(180, 14%, 20%);
+  --FF-FONT:'League Spartan', sans-serif;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+html, body {
+  scroll-behavior: smooth;
+  font-family: var(--FF-FONT);
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+button, input {
+  border: none;
+  outline: none;
+  font-family: inherit;
+}
+
+.offset,
+figcaption {
+  position: absolute;
+  left: -10000px;
+}
+
+.none {
+  display: none;
+}
+
+hr {
+  display: none;
+}
+
+@media screen and (max-width: 750px) {
+  hr {
+    display: block;
+    margin: 10px 0px;
+  }
+}
+
+.job__filters__span {
+  font-size: .8rem;
+  padding: 5px 10px;
+  border-radius: 50px;
+  background: var(--dark-cyan-bg-main);
+  color: var(--white);
+  text-transform: uppercase;
+  font-weight: 400;
+}
+
+#text {
+  display: none;
+}
+
+.header {
+  min-height: 20vh;
+  min-width: 100%;
+  background-image: url("../images/bg-header-desktop.svg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: center;
+  background-color: var(--dark-cyan-bg-main);
+}
+
+@media screen and (max-width: 500px) {
+  .header {
+    background-image: url("../images/bg-header-mobile.svg");
+    min-height: 14vh;
+  }
+}
+
+.header h1 {
+  opacity: 0;
+  pointer-events: none;
+}
+
+main {
+  background: var(--cyan-bg);
+  min-height: calc(100vh - 20vh);
+  padding: 10px 20px;
+}
+
+main .filter__container.none {
+  display: none;
+}
+
+main .filter__container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  padding: 10px 20px;
+  background: var(--white);
+  width: calc(100vw - 20vw);
+  max-width: 1200px;
+  height: 10vh;
+  margin: -30px auto 20px;
+  gap: 20px;
+  border-radius: 4px;
+}
+
+@media screen and (max-width: 800px) {
+  main .filter__container {
+    width: 100%;
+    height: auto;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+    margin: -30px 0 20px;
+  }
+}
+
+main .filter__container .filter span {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  background: var(--cyan-bg);
+  color: var(--dark-cyan-bg-main);
+  font-weight: 560;
+  padding-left: 10px;
+  border-radius: 6px;
+}
+
+@media screen and (max-width: 800px) {
+  main .filter__container .filter span {
+    width: 100%;
+  }
+}
+
+main .filter__container .filter span img {
+  background: var(--dark-cyan-bg-main);
+  padding: 5px;
+  margin-left: 6px;
+  cursor: pointer;
+  -webkit-transition: all .3s ease;
+  transition: all .3s ease;
+}
+
+main .filter__container .filter span img:hover {
+  background: var(--very-dark-cyan);
+}
+
+main .filter__container .filter__clear {
+  margin-left: auto;
+  color: var(--dark-cyan-bg-main);
+  -webkit-transition: all .3s ease;
+  transition: all .3s ease;
+  font-size: 1.1rem;
+  cursor: pointer;
+}
+
+main .filter__container .filter__clear:hover {
+  text-decoration: underline;
+}
+
+main .job__filters {
+  background: var(--white);
+  width: calc(100vw - 20vw);
+  max-width: 1200px;
+  padding: 10px 20px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  margin: 15px auto;
+  border-left: 3.5px solid var(--dark-cyan-bg-main);
+  -webkit-box-shadow: 0px 0px 10px var(--dark-cyan-bg-main);
+          box-shadow: 0px 0px 10px var(--dark-cyan-bg-main);
+  border-radius: 4px;
+  position: relative;
+}
+
+@media screen and (max-width: 800px) {
+  main .job__filters {
+    width: 100%;
+    height: auto;
+    padding: 30px 20px 20px;
+    margin: 45px auto;
+  }
+}
+
+main .job__filters .job__filters__img__container {
+  max-width: 60px;
+  margin: 0px 20px 0px 0px;
+}
+
+@media screen and (max-width: 750px) {
+  main .job__filters .job__filters__img__container {
+    position: absolute;
+    top: -30px;
+    left: 20px;
+  }
+}
+
+main .job__filters .job__filters__img__container img {
+  width: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+main .job__filters .job__filters__info__container {
+  margin-top: 20px;
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+}
+
+main .job__filters .job__filters__info__container header {
+  max-width: 300px;
+}
+
+main .job__filters .job__filters__info__container header h2 {
+  font-size: 1rem;
+  color: var(--dark-cyan-bg-main);
+}
+
+@media screen and (max-width: 930px) {
+  main .job__filters .job__filters__info__container header h2 {
+    font-size: .9rem;
+  }
+}
+
+main .job__filters .job__filters__info__container header h2 span {
+  margin: 0px 5px;
+}
+
+main .job__filters .job__filters__info__container header h2 .job__filters__features {
+  background: var(--very-dark-cyan);
+}
+
+@media screen and (max-width: 750px) {
+  main .job__filters .job__filters__info__container .time {
+    margin: 10px 0px;
+  }
+}
+
+main .job__filters .job__filters__info__container .time h3 {
+  font-size: 1.2rem;
+  margin: 15px 0px 10px;
+  font-weight: 600;
+  -webkit-transition: all .3s ease;
+  transition: all .3s ease;
+  cursor: pointer;
+}
+
+main .job__filters .job__filters__info__container .time h3:hover {
+  color: var(--dark-cyan-bg-main);
+}
+
+@media screen and (max-width: 930px) {
+  main .job__filters .job__filters__info__container .time h3 {
+    font-size: .9rem;
+  }
+}
+
+main .job__filters .job__filters__info__container .time .job__filters__posted {
+  color: var(--dark-cyan);
+  font-weight: 300;
+  font-size: .8rem;
+}
+
+@media screen and (max-width: 930px) {
+  main .job__filters .job__filters__info__container .time .job__filters__posted {
+    font-size: .9rem;
+  }
+}
+
+main .job__filters .job__filters__info__container .time .job__filters__role {
+  color: var(--dark-cyan);
+  font-weight: 300;
+  font-size: .9rem;
+  margin: 0px 20px;
+}
+
+@media screen and (max-width: 930px) {
+  main .job__filters .job__filters__info__container .time .job__filters__role {
+    font-size: .8rem;
+  }
+}
+
+main .job__filters .job__filters__info__container .time .job__filters__place {
+  color: var(--dark-cyan);
+  font-weight: 300;
+  font-size: .9rem;
+}
+
+@media screen and (max-width: 930px) {
+  main .job__filters .job__filters__info__container .time .job__filters__place {
+    font-size: .8rem;
+  }
+}
+
+main .job__filters .job__filters__skills {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  gap: 10px;
+}
+
+main .job__filters .job__filters__skills .skills {
+  cursor: pointer;
+  background: var(--cyan-bg);
+  color: var(--dark-cyan-bg-main);
+  padding: 6px 8px;
+  margin: 5px 8px 5px 0px;
+  font-weight: 600;
+  -webkit-transition: all .3s ease;
+  transition: all .3s ease;
+  border-radius: 6px;
+  white-space: normal;
+}
+
+main .job__filters .job__filters__skills .skills:hover {
+  background: var(--dark-cyan-bg-main);
+  color: var(--white);
+}
+/*# sourceMappingURL=style.css.map */

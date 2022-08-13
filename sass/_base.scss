@@ -1,0 +1,285 @@
+@import url('https://fonts.googleapis.com/css2?family=League+Spartan:wght@500;700&display=swap');
+@import "./utilities";
+@import "./responsive";
+
+// resets
+*{
+    margin : 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+// end of resets
+//  base style
+html, body{
+    scroll-behavior: smooth;
+    font-family: var(--FF-FONT);
+    max-width: 1400px;
+    margin: 0 auto;
+}
+button, input{
+    border: none;
+    outline: none;
+    font-family: inherit;
+} 
+// img{
+//     width: 100px;
+// }
+.offset,
+figcaption{
+    position: absolute;
+    left: -10000px;
+}
+.none{
+    display: none;
+}
+hr{
+    display: none;
+
+    @include mq(750px){
+        display: block;
+        margin: 10px 0px;
+    }
+}
+
+.job__filters__span{
+    font-size: .8rem;               
+    padding: 5px 10px;
+    border-radius: 50px;
+    background:  var(--dark-cyan-bg-main);
+    color: var(--white);
+    text-transform: uppercase;
+    font-weight: 400;
+}
+#text{
+    display: none;
+}
+//  end of base style
+
+// header
+.header{
+    min-height: 20vh;
+    min-width: 100%;
+    background-image: url("../images/bg-header-desktop.svg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: center;
+    background-color: var(--dark-cyan-bg-main);
+    
+    @include mq(500px){
+        background-image: url("../images/bg-header-mobile.svg");
+        min-height: 14vh;
+    }
+
+    h1{
+        opacity: 0;
+        pointer-events: none;
+    }
+}
+// end of header
+
+// main
+main{
+    background: var(--cyan-bg);
+    min-height: calc(100vh - 20vh);
+    padding: 10px 20px;
+
+    .filter__container.none{
+        display: none;
+    }
+    .filter__container{
+        @include flexCenter;
+        justify-content: flex-start;
+        padding: 10px 20px;
+        background: var(--white);
+        width: calc(100vw - 20vw);
+        max-width: 1200px;
+        height: 10vh;
+        margin: -30px auto 20px;
+        gap: 20px;
+        border-radius: 4px;
+        @include mq(800px){
+            width: 100%;
+            height: auto;
+            flex-wrap: wrap;
+            margin: -30px 0 20px ;
+        }
+
+
+        .filter{
+    
+            span{
+                display: flex;
+                align-items: center;
+                width: fit-content;
+                background:var(--cyan-bg);
+                color: var(--dark-cyan-bg-main);
+                font-weight: 560;
+                padding-left: 10px;
+                border-radius: 6px;
+                @include mq(800px){
+                    width: 100%;
+                    
+                }
+
+                img{
+                    background: var(--dark-cyan-bg-main);
+                    padding: 5px;
+                    margin-left: 6px;
+                    cursor: pointer;
+                    transition: all .3s ease;
+
+                    &:hover{
+                        background: var(--very-dark-cyan);
+                    }
+                }
+            }
+        }
+
+        .filter__clear{
+            margin-left: auto;
+            color: var(--dark-cyan-bg-main);
+            transition: all .3s ease;
+            font-size: 1.1rem;
+            cursor: pointer;
+            &:hover{
+                text-decoration: underline;
+            }
+        }
+    }
+
+    .job__filters{
+        background: var(--white);
+        width: calc(100vw - 20vw);
+        max-width: 1200px;
+        padding: 10px 20px;
+        @include flexCenter;
+        flex-wrap: wrap;
+        justify-content: flex-start;
+        margin: 15px auto;
+        border-left: 3.5px solid var(--dark-cyan-bg-main);
+        box-shadow: 0px 0px 10px var(--dark-cyan-bg-main);
+        border-radius: 4px;
+        position: relative;
+        
+        @include mq(800px){
+            width: 100%;
+            height: auto;
+            padding: 30px 20px 20px;
+            margin: 45px auto;
+        }
+
+        .job__filters__img__container{
+            max-width: 60px;
+            margin: 0px 20px 0px 0px;
+
+            @include mq(750px){
+                position: absolute;
+                top: -30px;
+                left: 20px;
+            }
+
+            img{
+                width: 100%;
+                object-fit: cover;
+            }
+        }
+
+        .job__filters__info__container{
+            margin-top: 20px;
+            flex: 1;
+
+            header{
+                max-width: 300px;
+
+                h2{
+                    font-size: 1rem;
+                    color: var(--dark-cyan-bg-main);
+                    
+                    @include mq(930px){
+                        font-size: .9rem;
+                    }
+
+                    span{
+                        margin: 0px 5px;
+                    }
+                    .job__filters__features{
+                        background: var(--very-dark-cyan);
+                    }
+                }
+            }
+            .time{
+
+                @include mq(750px){
+                    margin: 10px 0px;
+                }
+                h3{
+                    font-size: 1.2rem;
+                    margin: 15px 0px 10px;
+                    font-weight: 600;
+                    transition: all .3s ease;
+                    cursor: pointer;
+
+                    &:hover{
+                        color: var(--dark-cyan-bg-main);
+                    }
+    
+                    @include mq(930px){
+                        font-size: .9rem;
+                    }
+                }
+                .job__filters__posted{
+                    color: var(--dark-cyan);
+                    font-weight: 300;
+                    font-size: .8rem;
+                    @include mq(930px){
+                        font-size: .9rem;
+                    }
+                }
+                .job__filters__role{
+                    color: var(--dark-cyan);
+                    font-weight: 300;
+                    font-size: .9rem;
+                    margin: 0px 20px;
+                    @include mq(930px){
+                        font-size: .8rem;
+                    }
+                }
+                .job__filters__place{
+                    color: var(--dark-cyan);
+                    font-weight: 300;
+                    font-size: .9rem;
+                    @include mq(930px){
+                        font-size: .8rem;
+                    }
+                }
+            }
+
+            
+        }
+
+        .job__filters__skills {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+
+            .skills{
+                cursor: pointer;
+                background: var(--cyan-bg);
+                color: var(--dark-cyan-bg-main);
+                padding: 6px 8px;
+                margin: 5px 8px 5px 0px;
+                font-weight: 600;
+                transition: all .3s ease;
+                border-radius: 6px;
+                white-space: normal;
+
+                &:hover{
+                    background: var(--dark-cyan-bg-main);
+                    color: var(--white);
+                }
+                }
+            }
+        }
+    }
+// end of  main
+

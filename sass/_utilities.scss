@@ -1,0 +1,16 @@
+:root{
+    --cyan-bg : hsl(180, 52%, 96%);
+    --white : white;
+    --cyan-tables : hsl(180, 31%, 95%);
+    --dark-cyan : hsl(180, 8%, 52%);
+    --dark-cyan-bg-main : hsl(180, 25%, 51%);
+    --very-dark-cyan:hsl(180, 14%, 20%);
+    --FF-FONT :'League Spartan', sans-serif;
+}
+
+
+@mixin flexCenter{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
